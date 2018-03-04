@@ -1,0 +1,116 @@
+Bootstrap: debootstrap
+OSVersion: xenial
+MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
+
+%help
+  A container to hold quality control tools and their dependencies for analysing
+  nanopore data.
+  Run `singularity exec nanoporeqc.simg` followed by any of the following:
+    - pistis
+    - porechop
+    - filtlong
+    - minimap2
+    - samtools
+    - NanoLyse
+    - NanoStat
+    - centrifuge
+
+%environment
+  PATH=/usr/local/bin:$PATH
+
+%post
+  # ================================
+  # INSTALL some core dependencies
+  # ================================
+  apt-get update
+  apt-get install -y software-properties-common wget
+  apt-add-repository universe
+  apt-get update
+  apt-get install -y build-essential manpages-dev make zlib1g-dev checkinstall libssl-dev  
+  echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+  echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+
+  # ================================
+  # INSTALL python 3.6
+  # ================================
+  PY_VERSION=3.6.4
+  cd /opt
+  wget https://www.python.org/ftp/python/${PY_VERSION}/Python-${PY_VERSION}.tgz -O - | \
+      tar -xzf -
+  cd Python-${PY_VERSION}
+  ./configure
+  make
+  make install
+  cd ~
+
+  # ================================
+  # INSTALL pistis
+  # ================================
+  pip3 install pistis
+
+  # ================================
+  # INSTALL porechop
+  # ================================
+  PORECHOP_VERSION=0.2.3
+  apt-get install python3-setuptools python3-pkg-resources
+  wget https://github.com/rrwick/Porechop/archive/v${PORECHOP_VERSION}.tar.gz
+  tar xzf v${PORECHOP_VERSION}.tar.gz
+  rm v${PORECHOP_VERSION}.tar.gz
+  cd Porechop-${PORECHOP_VERSION}
+  python3 setup.py install
+  cd ~
+
+  # ================================
+  # INSTALL filtlong
+  # ================================
+  FILTLONG_VERSION=0.2.0
+  wget https://github.com/rrwick/Filtlong/archive/v${FILTLONG_VERSION}.tar.gz
+  tar xzf v${FILTLONG_VERSION}.tar.gz
+  rm v${FILTLONG_VERSION}.tar.gz
+  cd Filtlong-${FILTLONG_VERSION}
+  make -j
+  cp bin/filtlong /usr/local/bin
+  cd ~
+
+  # ================================
+  # INSTALL minimap2
+  # ================================
+  MM2_VERSION=2.9
+  wget https://github.com/lh3/minimap2/releases/download/v${MM2_VERSION}/minimap2-${MM2_VERSION}_x64-linux.tar.bz2 -O - | \
+    tar -jxvf -
+  cp ./minimap2-${MM2_VERSION}_x64-linux/minimap2 /usr/local/bin
+
+  # ================================
+  # INSTALL samtools
+  # ================================
+  SAMTOOLS_VERSION=1.7
+  apt-get install -y libncurses5-dev libbz2-dev liblzma-dev
+  wget https://github.com/samtools/samtools/releases/download/${SAMTOOLS_VERSION}/samtools-${SAMTOOLS_VERSION}.tar.bz2 -O - | tar -jxvf -
+  cd samtools-${SAMTOOLS_VERSION}
+  ./configure
+  make
+  make install
+  cd ~
+
+  # ================================
+  # INSTALL nanolyse
+  # ================================
+  pip3 install NanoLyse
+
+  # ================================
+  # INSTALL nanostats
+  # ================================
+  pip3 install nanostat
+
+  # ================================
+  # INSTALL centrifuge
+  # ================================
+  apt-get install -y git
+  # use their github repository as the releases dont seem to be very up to date at the moment
+  git clone https://github.com/infphilo/centrifuge
+  cd centrifuge
+  # go to version 1.0.3-beta
+  git reset --hard 95178872de36bc10ce83b55397417050eac52e65
+  make
+  make install prefix=/usr/local
+  cd ~
