@@ -26,7 +26,7 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
   apt-get install -y software-properties-common wget
   apt-add-repository universe
   apt-get update
-  apt-get install -y build-essential manpages-dev make zlib1g-dev checkinstall libssl-dev  
+  apt-get install -y build-essential manpages-dev make zlib1g-dev checkinstall libssl-dev libbz2-dev 
   export LC_ALL=C.UTF-8
   export LANG=C.UTF-8
   echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
