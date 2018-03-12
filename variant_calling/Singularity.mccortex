@@ -1,0 +1,24 @@
+Bootstrap: debootstrap
+OSVersion: xenial
+MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
+
+%environment
+  PATH=/usr/local/bin:$PATH
+
+%post
+  apt-get update
+  apt-get install -y software-properties-common wget build-essential zlib1g-dev git
+  apt-add-repository universe
+  apt-get update
+
+  # ========================
+  # INSTALL Mccortex and dependencies
+  # ========================
+  VERSION=0.2
+  apt-get install -y libncurses5-dev libncursesw5-dev
+  git clone --recursive https://github.com/mcveanlab/mccortex
+  cd mccortex
+  git checkout v${VERSION}
+  # compile for a kmer size of 31
+  make all
+  cp bin/mccortex31 /usr/bin/
