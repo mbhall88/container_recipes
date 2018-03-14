@@ -1,5 +1,6 @@
 # Variant Calling Recipes
-The recipes in this directory revolve around tools for variant calling.
+[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/685)  
+The recipes in this directory revolve around tools for variant calling.  
 
 ---
 
