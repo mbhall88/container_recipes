@@ -20,3 +20,13 @@ normal CLI parameters/options/arguments.
 singularity pull --name mccortex.simg shub://mbhall88/Singularity_recipes:mccortex
 singularity exec mccortex.simg mccortex31 --help
 ```
+ In addition, you can also use this container to execute [CortexJDK](https://github.com/mcveanlab/CortexJDK)
+ which is a Java class library for performing efficient, low-memory traversals
+ on multi-color linked de Bruijn graphs (LdBG) produced by McCortex. You can run
+ `cortexjdk` with the following command.  
+
+ ```
+singularity exec mccortex.simg java -jar /usr/bin/cortexjdk.jar
+ ```
+
+ Obviously you can follow this with any parameters you want.
