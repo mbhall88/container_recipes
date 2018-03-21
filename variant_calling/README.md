@@ -35,7 +35,7 @@ singularity exec mccortex.simg java -jar /usr/bin/cortexjdk.jar
 
 ## Mykrobe CLI
 This container holds an installation of [Mykrobe](https://github.com/Mykrobe-tools/mykrobe-atlas-cli) CLI tools
-(currently commit [7a1c1ef](https://github.com/Mykrobe-tools/mykrobe-atlas-cli/commit/7a1c1efe84263d6a046693d6443357157437a0f1) but you can change it in the recipe if you need another).  
+(currently commit [8f7fd05](https://github.com/Mykrobe-tools/mykrobe-atlas-cli/commit/8f7fd05b9b94fa3cc40df2845187fa35393b9c2a) but you can change it in the recipe if you need another).  
 
 Mykrobe can be used to predict a sample's drug susceptibility, build a variant
 probe set, and genotype a sample using a probe set.  
