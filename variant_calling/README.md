@@ -30,3 +30,23 @@ singularity exec mccortex.simg java -jar /usr/bin/cortexjdk.jar
  ```
 
  Obviously you can follow this with any parameters you want.
+
+---
+
+## Mykrobe Atlas
+This container holds an installation of [`mykrobe`](https://github.com/Mykrobe-tools/mykrobe-atlas-cli)
+(currently commit [7a1c1ef](https://github.com/Mykrobe-tools/mykrobe-atlas-cli/commit/7a1c1efe84263d6a046693d6443357157437a0f1) but you can change it in the recipe if you need another).  
+
+Mykrobe can be used to predict a sample's drug susceptibility, build a variant
+probe set, and genotype a sample using a probe set.  
+
+To run Mykrobe you need to first pull the container and then
+execute the container with the name of any of the tools, following by their
+normal CLI parameters/options/arguments.
+
+```
+singularity pull --name mykrobe.simg shub://mbhall88/Singularity_recipes:mykrobe
+singularity exec mykrobe.simg mykrobe --help
+```  
+
+Note: This container also includes the pre-built probesets.
