@@ -49,4 +49,4 @@ singularity pull --name mykrobe.simg shub://mbhall88/Singularity_recipes:mykrobe
 singularity exec mykrobe.simg mykrobe --help
 ```  
 
-Note: This container also includes the pre-built probesets.
+Note: This container also includes the pre-built probesets plus the version of `mccortex31` that is required by Mykrobe.
