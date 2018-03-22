@@ -26,8 +26,9 @@ singularity pull shub://mbhall88/Singularity_recipes:foo
 ```
 By default the containers will have a name such as `mbhall88-Singularity_recipes-master-foo.simg`. To name it something more succinct, run
 ```
-singularity pull --name customname.simg shub://mbhall88/Singularity_recipes:foo
+singularity pull --force --name customname.simg shub://mbhall88/Singularity_recipes:foo
 ```
+Note: The `--force` option will override any container that exists in that location with the same name. If you are trying to pull a container to update a pre-existing one, then the `--force` flag is necessary.  
 You don't necessarily have to pull the container onto your machine - you can execute from the Singularity Hub with
 ```
 singularity exec shub://mbhall88/Singularity_recipes:mccortex mccortex31 --help
