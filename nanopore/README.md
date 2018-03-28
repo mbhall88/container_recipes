@@ -10,7 +10,7 @@ This container holds a set of tools that I use for quality control of nanopore
 data.
 
 ```sh
-singularity pull --name nanoporeqc.simg shub://mbhall88/Singularity_recipes:nanoporeqc
+singularity pull --force --name nanoporeqc.simg shub://mbhall88/Singularity_recipes:nanoporeqc
 singularity exec nanoporeqc.simg filtlong --help
 ```
 

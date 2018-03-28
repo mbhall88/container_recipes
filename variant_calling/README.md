@@ -17,7 +17,7 @@ execute the container with the name of any of the tools, following by their
 normal CLI parameters/options/arguments.
 
 ```
-singularity pull --name mccortex.simg shub://mbhall88/Singularity_recipes:mccortex
+singularity pull --force --name mccortex.simg shub://mbhall88/Singularity_recipes:mccortex
 singularity exec mccortex.simg mccortex31 --help
 ```
  In addition, you can also use this container to execute [CortexJDK](https://github.com/mcveanlab/CortexJDK)
@@ -45,7 +45,7 @@ execute the container with the name of any of the tools, following by their
 normal CLI parameters/options/arguments.
 
 ```
-singularity pull --name mykrobe.simg shub://mbhall88/Singularity_recipes:mykrobe
+singularity pull --force --name mykrobe.simg shub://mbhall88/Singularity_recipes:mykrobe
 singularity exec mykrobe.simg mykrobe --help
 ```  
 
