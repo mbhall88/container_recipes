@@ -36,9 +36,9 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
   # INSTALL python 3.6
   # ================================
   PY_VERSION=3.6.4
+  PY_URL=https://www.python.org/ftp/python/${PY_VERSION}/Python-${PY_VERSION}.tgz
   cd /opt
-  wget https://www.python.org/ftp/python/${PY_VERSION}/Python-${PY_VERSION}.tgz -O - | \
-      tar -xzf -
+  wget "$PY_URL" -O - | tar -xzf -
   cd Python-${PY_VERSION}
   ./configure
   make
@@ -54,8 +54,9 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
   # INSTALL porechop
   # ================================
   PORECHOP_VERSION=0.2.3
+  PORECHOP_URL=https://github.com/rrwick/Porechop/archive/v${PORECHOP_VERSION}.tar.gz
   apt-get install python3-setuptools python3-pkg-resources
-  wget https://github.com/rrwick/Porechop/archive/v${PORECHOP_VERSION}.tar.gz
+  wget "$PORECHOP_URL"
   tar xzf v${PORECHOP_VERSION}.tar.gz
   rm v${PORECHOP_VERSION}.tar.gz
   cd Porechop-${PORECHOP_VERSION}
@@ -66,7 +67,8 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
   # INSTALL filtlong
   # ================================
   FILTLONG_VERSION=0.2.0
-  wget https://github.com/rrwick/Filtlong/archive/v${FILTLONG_VERSION}.tar.gz
+  FILTLONG_URL=https://github.com/rrwick/Filtlong/archive/v${FILTLONG_VERSION}.tar.gz
+  wget "$FILTLONG_URL"
   tar xzf v${FILTLONG_VERSION}.tar.gz
   rm v${FILTLONG_VERSION}.tar.gz
   cd Filtlong-${FILTLONG_VERSION}
@@ -78,16 +80,17 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
   # INSTALL minimap2
   # ================================
   MM2_VERSION=2.10
-  wget https://github.com/lh3/minimap2/releases/download/v${MM2_VERSION}/minimap2-${MM2_VERSION}_x64-linux.tar.bz2 -O - | \
-    tar -jxvf -
+  MM2_URL=https://github.com/lh3/minimap2/releases/download/v${MM2_VERSION}/minimap2-${MM2_VERSION}_x64-linux.tar.bz2
+  wget "$MM2_URL" -O - | tar -jxvf -
   cp ./minimap2-${MM2_VERSION}_x64-linux/minimap2 /usr/local/bin
 
   # ================================
   # INSTALL samtools
   # ================================
   SAMTOOLS_VERSION=1.7
+  SAMTOOLS_URL=https://github.com/samtools/samtools/releases/download/${SAMTOOLS_VERSION}/samtools-${SAMTOOLS_VERSION}.tar.bz2
   apt-get install -y libncurses5-dev libbz2-dev liblzma-dev
-  wget https://github.com/samtools/samtools/releases/download/${SAMTOOLS_VERSION}/samtools-${SAMTOOLS_VERSION}.tar.bz2 -O - | tar -jxvf -
+  wget "$SAMTOOLS_URL" -O - | tar -jxvf -
   cd samtools-${SAMTOOLS_VERSION}
   ./configure
   make
