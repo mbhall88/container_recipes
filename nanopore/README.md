@@ -28,3 +28,16 @@ The tools in this container are:
 To run any of these programs you need to first pull the container and then
 execute the container with the name of any of the tools, following by their
 normal CLI parameters/options/arguments.
+
+---
+
+## fast5
+This container holds a C++ header-only library for reading Oxford Nanopore Fast5
+files [developed by Jared Simpson's lab](https://github.com/mateidavid/fast5).
+Of specific interest here is access to the python wrapper `f5pack` which
+facilitates packing and unpacking (compression) of nanopore data.
+
+```sh
+singularity pull --name fast5.simg shub://mbhall88/Singularity_recipes:fast5
+singularity exec fast5.simg f5pack --help
+```
