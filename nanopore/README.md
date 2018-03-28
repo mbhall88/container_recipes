@@ -1,7 +1,7 @@
 # Nanopore Recipes
-[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/685)  
+[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/685)
 The recipes in this directory revolve around tools for analysing nanopore
-data.  
+data.
 
 ---
 
@@ -38,6 +38,6 @@ Of specific interest here is access to the python wrapper `f5pack` which
 facilitates packing and unpacking (compression) of nanopore data.
 
 ```sh
-singularity pull --name fast5.simg shub://mbhall88/Singularity_recipes:fast5
+singularity pull --force --name fast5.simg shub://mbhall88/Singularity_recipes:fast5
 singularity exec fast5.simg f5pack --help
 ```
