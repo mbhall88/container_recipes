@@ -46,7 +46,7 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
   cd ~
 
   # ================================
-  # INSTALL latest pistis release (v0.3.0)
+  # INSTALL latest pistis release (v0.3.1)
   # ================================
   pip3 install pistis
 
