@@ -41,14 +41,3 @@ facilitates packing and unpacking (compression) of nanopore data.
 singularity pull --force --name fast5.simg shub://mbhall88/Singularity_recipes:fast5
 singularity exec fast5.simg f5pack --help
 ```
-
----
-
-## Albacore
-
-Oxford Nanopore basecaller.
-
-```sh
-singularity pull --force --name albacore.simg shub://mbhall88/Singularity_recipes:albacore
-singularity exec albacore.simg read_fast5_basecaller.py --help
-```
