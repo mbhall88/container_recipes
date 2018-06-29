@@ -41,3 +41,20 @@ facilitates packing and unpacking (compression) of nanopore data.
 singularity pull --force --name fast5.simg shub://mbhall88/Singularity_recipes:fast5
 singularity exec fast5.simg f5pack --help
 ```
+
+---
+
+## canu
+[Canu](https://github.com/marbl/canu) is a fork of the Celera Assembler, designed for high-noise single-molecule sequencing (such as the PacBio RS II/Sequel or Oxford Nanopore MinION).
+
+Canu is a hierarchical assembly pipeline which runs in four steps:
+
+* Detect overlaps in high-noise sequences using MHAP
+* Generate corrected sequence consensus
+* Trim corrected sequences
+* Assemble trimmed corrected sequences
+
+```sh
+singularity pull --force --name canu.simg shub://mbhall88/Singularity_recipes:canu
+singularity exec canu.simg canu --help
+```
