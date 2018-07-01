@@ -1,0 +1,31 @@
+Bootstrap: debootstrap
+OSVersion: bionic
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+
+%help
+  A container to hold the assembler nanopolish.
+  Run `singularity exec nanopolish.simg canu`
+
+%environment
+  PATH=/usr/local/bin:$PATH
+
+%post
+    apt update
+    apt install -y software-properties-common
+    apt-add-repository universe
+    apt update
+    apt install -y wget build-essential git zlib1g-dev
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+    echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+    echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+
+    #================================
+    # INSTALL NANOPOLISH
+    #================================
+    VERSION="0.9.2"
+    git clone --recursive https://github.com/jts/nanopolish.git
+    cd nanopolish
+    git checkout v"$VERSION"
+    make
+    ln -s $(realpath nanopolish) /usr/local/bin/nanopolish
