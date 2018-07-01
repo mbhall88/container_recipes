@@ -58,3 +58,13 @@ Canu is a hierarchical assembly pipeline which runs in four steps:
 singularity pull --force --name canu.simg shub://mbhall88/Singularity_recipes:canu
 singularity exec canu.simg canu --help
 ```
+
+---
+
+## nanopolish
+Software package for signal-level analysis of Oxford Nanopore sequencing data. [Nanopolish](https://github.com/jts/nanopolish) can calculate an improved consensus sequence for a draft genome assembly, detect base modifications, call SNPs and indels with respect to a reference genome and more (see Nanopolish modules, below).
+
+```sh
+singularity pull --force --name nanopolish.simg shub://mbhall88/Singularity_recipes:nanopolish
+singularity exec nanopolish.simg nanopolish --help
+```
