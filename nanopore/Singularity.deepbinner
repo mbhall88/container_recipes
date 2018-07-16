@@ -25,5 +25,5 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     #================================
     git clone https://github.com/rrwick/Deepbinner.git
     cd Deepbinner
+    pip3 install -r requirements.txt
     python3 setup.py install
-    
