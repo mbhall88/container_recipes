@@ -68,3 +68,13 @@ Software package for signal-level analysis of Oxford Nanopore sequencing data. [
 singularity pull --force --name nanopolish.simg shub://mbhall88/Singularity_recipes:nanopolish
 singularity exec nanopolish.simg nanopolish --help
 ```
+
+---
+
+## deepbinner
+[Deepbinner](https://github.com/rrwick/Deepbinner) is a tool for demultiplexing barcoded Oxford Nanopore sequencing reads.  
+
+```sh
+singularity pull --force --name deepbinner.simg shub://mbhall88/Singularity_recipes:nanopolish
+singularity exec deepbinner.simg deepbinner --help
+```
