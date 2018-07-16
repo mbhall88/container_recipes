@@ -1,5 +1,5 @@
 # Nanopore Recipes
-[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/685)  
+[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/685)
 The recipes in this directory revolve around tools for analysing nanopore
 data.
 
@@ -72,9 +72,9 @@ singularity exec nanopolish.simg nanopolish --help
 ---
 
 ## deepbinner
-[Deepbinner](https://github.com/rrwick/Deepbinner) is a tool for demultiplexing barcoded Oxford Nanopore sequencing reads.  
+[Deepbinner](https://github.com/rrwick/Deepbinner) is a tool for demultiplexing barcoded Oxford Nanopore sequencing reads.
 
 ```sh
-singularity pull --force --name deepbinner.simg shub://mbhall88/Singularity_recipes:nanopolish
+singularity pull --force --name deepbinner.simg shub://mbhall88/Singularity_recipes:deepbinner
 singularity exec deepbinner.simg deepbinner --help
 ```
