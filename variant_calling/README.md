@@ -50,3 +50,14 @@ singularity exec mykrobe.simg mykrobe --help
 ```  
 
 Note: This container also includes the pre-built probesets plus the version of `mccortex31` that is required by Mykrobe.
+
+---
+
+## pandora
+
+[Pandora](https://github.com/rmcolq/pandora) is a tool for bacterial genome analysis without using a reference genome, including genetic variation from SNPs to gene presence/absence across the whole pan-genome.
+
+```
+singularity pull --force --name pandora.simg shub://mbhall88/Singularity_recipes:pandora
+singularity exec pandora.simg pandora 
+```
