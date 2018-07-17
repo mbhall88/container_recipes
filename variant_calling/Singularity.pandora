@@ -50,4 +50,4 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     cmake ..
     make
     ctest -VV
-    echo 'export PATH=$(pwd):$PATH'
+    echo "export PATH=$(pwd):$PATH" >> $SINGULARITY_ENVIRONMENT
