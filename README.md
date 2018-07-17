@@ -37,3 +37,9 @@ singularity exec shub://mbhall88/Singularity_recipes:mccortex mccortex31 --help
 But this takes much longer to run than pulling the container and then executing it locally.
 
 For a full list of usage examples, check out the [Singularity Hub usage docs](https://www.singularity-hub.org/collections/685/usage).
+
+---
+
+# Template
+I have also included a template `Singularity.template` which can be used for
+building up your own recipes. 
