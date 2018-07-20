@@ -29,4 +29,5 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     wget -qO- "$URL" | tar xvz
     cd canu-${VERSION}/src
     make -j 8
-    ln -s $(realpath ../Linux-amd64/bin/canu) /usr/local/bin/canu
+    cd ../Linux-amd64/bin/
+    echo "export PATH=$(pwd):$PATH" >> $SINGULARITY_ENVIRONMENT
