@@ -79,7 +79,7 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
   # ================================
   # INSTALL minimap2
   # ================================
-  MM2_VERSION=2.10
+  MM2_VERSION=2.12
   MM2_URL=https://github.com/lh3/minimap2/releases/download/v${MM2_VERSION}/minimap2-${MM2_VERSION}_x64-linux.tar.bz2
   wget "$MM2_URL" -O - | tar -jxvf -
   cp ./minimap2-${MM2_VERSION}_x64-linux/minimap2 /usr/local/bin
