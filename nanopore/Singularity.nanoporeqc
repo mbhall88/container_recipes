@@ -53,7 +53,7 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
   # ================================
   # INSTALL porechop
   # ================================
-  PORECHOP_VERSION=0.2.3
+  PORECHOP_VERSION=0.2.4
   PORECHOP_URL=https://github.com/rrwick/Porechop/archive/v${PORECHOP_VERSION}.tar.gz
   apt-get install python3-setuptools python3-pkg-resources
   wget "$PORECHOP_URL"
