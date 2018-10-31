@@ -1,8 +1,8 @@
 # Singularity Recipes
 
-[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/685)  
+[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/685)
 This repository is for all of my Singularity recipes and is linked to Singularity
-Hub where they are built and available.  
+Hub where they are built and available.
 
 To find out more information about the different recipes, go into the directory
 and read through the documentation there.
@@ -14,7 +14,7 @@ Technologies sequencing data.
 * [Variant Calling](https://github.com/mbhall88/Singularity_recipes/tree/master/variant_calling) -
 Containers for variant calling software.
 * [Assembly](https://github.com/mbhall88/Singularity_recipes/tree/master/assembly) -
-Container for genome assembly software.
+Containers for genome assembly software.
 
 ---
 
@@ -30,7 +30,7 @@ By default the containers will have a name such as `mbhall88-Singularity_recipes
 ```
 singularity pull --force --name customname.simg shub://mbhall88/Singularity_recipes:foo
 ```
-Note: The `--force` option will override any container that exists in that location with the same name. If you are trying to pull a container to update a pre-existing one, then the `--force` flag is necessary.  
+Note: The `--force` option will override any container that exists in that location with the same name. If you are trying to pull a container to update a pre-existing one, then the `--force` flag is necessary.
 
 You don't necessarily have to pull the container onto your machine - you can execute from the Singularity Hub with
 ```
