@@ -13,6 +13,8 @@ Containers for software packages/tools relating to analysis of Oxford Nanopore
 Technologies sequencing data.
 * [Variant Calling](https://github.com/mbhall88/Singularity_recipes/tree/master/variant_calling) -
 Containers for variant calling software.
+* [Assembly](https://github.com/mbhall88/Singularity_recipes/tree/master/assembly) -
+Container for genome assembly software.
 
 ---
 
@@ -42,4 +44,4 @@ For a full list of usage examples, check out the [Singularity Hub usage docs](ht
 
 # Template
 I have also included a template `Singularity.template` which can be used for
-building up your own recipes. 
+building up your own recipes.
