@@ -50,6 +50,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     cmake ..
     make
     cd ../bin/ngm*
+    chmod 777 ngm
     echo "export PATH=$(pwd):$PATH" >> $SINGULARITY_ENVIRONMENT
     cd
 
