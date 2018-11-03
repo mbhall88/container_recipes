@@ -17,7 +17,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
 
     # ================================
-    # INSTALL porechop
+    # INSTALL porechop 
     # ================================
     VERSION="0.2.4"
     URL=https://github.com/rrwick/Porechop/archive/v"$VERSION".tar.gz

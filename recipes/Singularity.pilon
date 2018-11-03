@@ -17,7 +17,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
 
     # ================================
-    # INSTALL pilon
+    # INSTALL pilon 
     # ================================
     VERSION="1.22"
     URL=https://github.com/broadinstitute/pilon/releases/download/v"$VERSION"/pilon-"$VERSION".jar

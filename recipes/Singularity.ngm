@@ -17,7 +17,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
 
     #================================
-    # INSTALL NGM
+    # INSTALL NGM 
     #================================
     VERSION="0.5.5"
     URL=https://github.com/Cibiv/NextGenMap/archive/v"$VERSION".tar.gz
