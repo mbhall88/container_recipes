@@ -14,7 +14,7 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
   # ================================
   # INSTALL FAST5 LIBRARY
   # ================================
-  FAST5_VERSION=0.6.5
+  VERSION="0.6.5"
   apt-get install -y build-essential libhdf5-dev libpython2.7-dev \
     python2.7-minimal python-pip
 
@@ -30,7 +30,7 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
   echo 'export HDF5_LIB_DIR=/usr/lib/x86_64-linux-gnu/hdf5/serial/' >> $SINGULARITY_ENVIRONMENT
 
   # download and install version release from GitHub
-  RELEASE_URL=https://github.com/mateidavid/fast5/archive/v${FAST5_VERSION}.tar.gz
+  RELEASE_URL=https://github.com/mateidavid/fast5/archive/v"$VERSION".tar.gz
   wget "$RELEASE_URL" -O - | tar xzf -
-  cd fast5-${FAST5_VERSION}/python
+  cd fast5-"$VERSION"/python
   python setup.py install

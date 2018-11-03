@@ -1,0 +1,28 @@
+Bootstrap: debootstrap
+OSVersion: xenial
+MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
+
+%environment
+  PATH=/usr/local/bin:$PATH
+
+%post
+  apt-get update
+  apt-get install -y software-properties-common wget build-essential zlib1g-dev git
+  apt-add-repository universe
+  apt-get update
+
+  # ========================
+  # INSTALL Mccortex and dependencies
+  # ========================
+  VERSION="1.0"
+  apt-get install -y libbz2-dev \
+    zlib1g-dev \
+    libncurses5-dev \
+    libncursesw5-dev \
+    liblzma-dev
+  wget  -O - https://github.com/mcveanlab/mccortex/archive/mccortex-"$VERSION".tar.gz | tar xzf -
+  cd mccortex*
+  make all MAXK=31
+  make all MAXK=63
+  cd bin
+  echo 'export PATH=$(pwd):$PATH' >> $SINGULARITY_ENVIRONMENT

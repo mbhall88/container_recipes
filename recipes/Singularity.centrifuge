@@ -1,0 +1,27 @@
+Bootstrap: debootstrap
+OSVersion: bionic
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+
+%environment
+  PATH=/usr/local/bin:$PATH
+
+%post
+    apt update
+    apt install -y software-properties-common
+    apt-add-repository universe
+    apt update
+    apt install -y git wget build-essential
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+    echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+    echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+
+    # ================================
+    # INSTALL centrifuge
+    # ================================
+    VERSION="1.0.4-beta"
+    URL=https://github.com/infphilo/centrifuge/archive/v"$VERSION".tar.gz
+    wget -O - "$URL" | tar xzf -
+    cd centrifuge*
+    make
+    make install prefix=/usr/local

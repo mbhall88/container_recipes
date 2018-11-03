@@ -1,0 +1,28 @@
+Bootstrap: debootstrap
+OSVersion: bionic
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+
+%environment
+  PATH=/usr/local/bin:$PATH
+
+%post
+    apt update
+    apt install -y software-properties-common
+    apt-add-repository universe
+    apt update
+    apt install -y git wget build-essential zlib1g-dev
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+    echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+    echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+
+    # ================================
+    # INSTALL filtlong
+    # ================================
+    VERSION="0.2.0"
+    URL=https://github.com/rrwick/Filtlong/archive/v${VERSION}.tar.gz
+    wget -O - "$URL" | tar xzf -
+    cd Filtlong*
+    make -j
+    cd bin
+    echo "export PATH=$(pwd):$PATH" >> $SINGULARITY_ENVIRONMENT

@@ -2,10 +2,6 @@ Bootstrap: debootstrap
 OSVersion: bionic
 MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
-%help
-  A container to hold the assembler nanopolish.
-  Run `singularity exec nanopolish.simg canu`
-
 %environment
   PATH=/usr/local/bin:$PATH
 
@@ -23,9 +19,9 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     #================================
     # INSTALL NANOPOLISH
     #================================
-    VERSION="0.9.2"
     git clone --recursive https://github.com/jts/nanopolish.git
     cd nanopolish
-    git checkout v"$VERSION"
+    # until new release with build fix is out, use this commit
+    git checkout d7c09ab248ed70ca6c02a6d778d85e57bc92be3a
     make
-    ln -s $(realpath nanopolish) /usr/local/bin/nanopolish
+    echo "export PATH=$(pwd):$PATH" >> $SINGULARITY_ENVIRONMENT
