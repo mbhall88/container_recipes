@@ -39,6 +39,7 @@ which can be used for building up your own recipes.
 * [centrifuge](https://github.com/infphilo/centrifuge)
 * [f5pack](https://github.com/mateidavid/fast5)
 * [filtlong](https://github.com/rrwick/Filtlong)
+* [mccortex](https://github.com/mcveanlab/mccortex)
 * [minimap2](https://lh3.github.io/minimap2/)
 * [mykrobe](https://github.com/Mykrobe-tools/mykrobe-atlas-cli)
 * [nanopolish](https://github.com/jts/nanopolish)
