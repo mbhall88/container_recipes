@@ -41,6 +41,7 @@ which can be used for building up your own recipes.
 * [filtlong](https://github.com/rrwick/Filtlong)
 * [mccortex](https://github.com/mcveanlab/mccortex)
 * [minimap2](https://lh3.github.io/minimap2/)
+* [MUMmer](http://mummer.sourceforge.net/manual/)
 * [mykrobe](https://github.com/Mykrobe-tools/mykrobe-atlas-cli)
 * [nanopolish](https://github.com/jts/nanopolish)
 * [ngm](https://github.com/Cibiv/NextGenMap/wiki)
