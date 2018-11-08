@@ -1,16 +1,16 @@
 # Singularity Recipes
 
-[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/685)  
+[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/685)
 This repository is for all of my [Singularity](https://www.sylabs.io/singularity/) recipes and is linked to Singularity
 Hub where they are built and available.
 
 You will find all the programs I have made Singularity recipes for inside the
-[`recipes` directory](https://github.com/mbhall88/Singularity_recipes/tree/master/recipes).  
+[`recipes` directory](https://github.com/mbhall88/Singularity_recipes/tree/master/recipes).
 
 I try to keep them up-to-date in terms of versions, but if you notice anything
 out of date, feel free to put in a pull request. Additionally, feel free to
 contribute recipes for programs I don't already have in here, or request one and
-if I have time I will try and make one.  
+if I have time I will try and make one.
 
 ## Getting a pre-built container
 
@@ -25,7 +25,7 @@ singularity pull --name "$tool".simg shub://mbhall88/Singularity_recipes:"$tool"
 
 Note: The `--force` option will override any container that exists in that
 location with the same name. If you are trying to pull a container to update a
-pre-existing one, then the `--force` flag is necessary.  
+pre-existing one, then the `--force` flag is necessary.
 
 For a full list of usage examples, check out the [Singularity Hub usage docs](https://www.singularity-hub.org/collections/685/usage).
 
@@ -48,3 +48,4 @@ which can be used for building up your own recipes.
 * [pilon](https://github.com/broadinstitute/pilon/wiki)
 * [porechop](https://github.com/rrwick/Porechop)
 * [samtools](http://samtools.sourceforge.net/)
+* [vcftools](https://vcftools.github.io/)
