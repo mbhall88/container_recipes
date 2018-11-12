@@ -37,6 +37,7 @@ which can be used for building up your own recipes.
 * [bcftools](http://www.htslib.org/doc/bcftools.html)
 * [canu](https://github.com/marbl/canu)
 * [centrifuge](https://github.com/infphilo/centrifuge)
+* [clustal omega](http://www.clustal.org/omega/)
 * [f5pack](https://github.com/mateidavid/fast5)
 * [filtlong](https://github.com/rrwick/Filtlong)
 * [mccortex](https://github.com/mcveanlab/mccortex)

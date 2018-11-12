@@ -17,7 +17,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
 
     # ========================
-    # INSTALL mccortex
+    # INSTALL vcftools
     # ========================
     apt install -y pkg-config zlib1g-dev
     VERSION="0.1.16"
@@ -27,3 +27,12 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     ./configure --prefix=/usr/local
     make
     make install
+
+    # install tabix dependency
+    cd ~/
+    wget -O - https://sourceforge.net/projects/samtools/files/tabix/tabix-0.2.6.tar.bz2/download | tar xjf -
+    cd tabix*
+    make
+    echo "export PATH=$(pwd):$PATH" >> $SINGULARITY_ENVIRONMENT
+    cd ..
+    chmod -R 777 tabix*
