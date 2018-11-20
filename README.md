@@ -35,11 +35,14 @@ which can be used for building up your own recipes.
 
 ## Available recipes
 * [bcftools](http://www.htslib.org/doc/bcftools.html)
+* [bracken](https://ccb.jhu.edu/software/bracken/index.shtml)
 * [canu](https://github.com/marbl/canu)
 * [centrifuge](https://github.com/infphilo/centrifuge)
 * [clustal omega](http://www.clustal.org/omega/)
 * [f5pack](https://github.com/mateidavid/fast5)
 * [filtlong](https://github.com/rrwick/Filtlong)
+* [kraken2](https://www.ccb.jhu.edu/software/kraken2/index.shtml)
+* [krakenuniq](https://github.com/fbreitwieser/krakenuniq)
 * [mccortex](https://github.com/mcveanlab/mccortex)
 * [minimap2](https://lh3.github.io/minimap2/)
 * [MUMmer](http://mummer.sourceforge.net/manual/)

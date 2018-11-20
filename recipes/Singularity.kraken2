@@ -17,5 +17,11 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
 
     # ================================
-    # INSTALL <program>
+    # INSTALL kraken2
     # ================================
+    KRAKEN2_DIR=/usr/local
+    VERSION="2.0.7-beta"
+    URL=https://github.com/DerrickWood/kraken2/archive/v"$VERSION".tar.gz
+    wget -O - "$URL" | tar xzf -
+    cd kraken2*
+    ./install_kraken2.sh "$KRAKEN2_DIR"

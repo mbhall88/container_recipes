@@ -1,0 +1,40 @@
+Bootstrap: debootstrap
+OSVersion: bionic
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+
+%environment
+  PATH=/usr/local:/usr/local/bin:$PATH
+
+%post
+    apt update
+    apt install -y software-properties-common
+    apt-add-repository universe
+    apt update
+    apt install -y git wget build-essential
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+    echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+    echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+
+    # ================================
+    # INSTALL kraken2
+    # ================================
+    KRAKEN2_DIR=/usr/local
+    VERSION="2.0.7-beta"
+    URL=https://github.com/DerrickWood/kraken2/archive/v"$VERSION".tar.gz
+    wget -O - "$URL" | tar xzf -
+    cd kraken2*
+    ./install_kraken2.sh "$KRAKEN2_DIR"
+    cd ~
+
+    # ================================
+    # INSTALL bracken
+    # ================================
+    VERSION="2.2"
+    URL=https://github.com/jenniferlu717/Bracken/archive/v"$VERSION".tar.gz
+    wget -O - "$URL" | tar xzf -
+    cd Bracken*/src
+    make
+    echo "export PATH=$(pwd):$PATH" >> $SINGULARITY_ENVIRONMENT
+    cd ../
+    echo "export PATH=$(pwd):$PATH" >> $SINGULARITY_ENVIRONMENT
