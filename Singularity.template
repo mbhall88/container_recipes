@@ -3,7 +3,7 @@ OSVersion: bionic
 MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
 %environment
-  PATH=/usr/local:/usr/local/bin:$PATH
+    export PATH=/usr/local:/usr/local/bin:$PATH
 
 %post
     apt update
