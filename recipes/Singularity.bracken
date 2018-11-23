@@ -2,9 +2,6 @@ Bootstrap: debootstrap
 OSVersion: bionic
 MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
-%environment
-  PATH=/usr/local:/usr/local/bin:$PATH
-
 %post
     apt update
     apt install -y software-properties-common
@@ -15,16 +12,31 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     export LANG=C.UTF-8
     echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
     echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+    echo "export PATH=/usr/local:/usr/local/bin:$PATH" >> $SINGULARITY_ENVIRONMENT
+
+    # ================================
+    # INSTALL blast tools (dustmasker req. for kraken)
+    # ================================
+    apt install -y libidn11-dev
+    VERSION="2.7.1+"
+    URL=ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-"$VERSION"-x64-linux.tar.gz
+    wget -O - "$URL" | tar xzf -
+    cp ncbi*/bin/dustmasker /usr/local/bin/
+    rm -rf ncbi-blast*
+    cd ~
 
     # ================================
     # INSTALL kraken2
     # ================================
-    KRAKEN2_DIR=/usr/local
     VERSION="2.0.7-beta"
     URL=https://github.com/DerrickWood/kraken2/archive/v"$VERSION".tar.gz
     wget -O - "$URL" | tar xzf -
     cd kraken2*
-    ./install_kraken2.sh "$KRAKEN2_DIR"
+    echo "export PATH=$(pwd):$PATH" >> $SINGULARITY_ENVIRONMENT
+    ./install_kraken2.sh $(pwd)
+    cp kraken2 /usr/local/bin
+    cp kraken2-build /usr/local/bin
+    cp kraken2-inspect /usr/local/bin
     cd ~
 
     # ================================

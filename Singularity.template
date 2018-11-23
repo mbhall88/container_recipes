@@ -2,9 +2,6 @@ Bootstrap: debootstrap
 OSVersion: bionic
 MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
-%environment
-    export PATH=/usr/local:/usr/local/bin:$PATH
-
 %post
     apt update
     apt install -y software-properties-common
@@ -15,6 +12,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     export LANG=C.UTF-8
     echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
     echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+    echo "export PATH=/usr/local:/usr/local/bin:$PATH" >> $SINGULARITY_ENVIRONMENT
 
     # ================================
     # INSTALL <program>
