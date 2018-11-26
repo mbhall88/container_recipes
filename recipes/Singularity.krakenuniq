@@ -27,6 +27,17 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     cd ~
 
     # ================================
+    # INSTALL jellyfish
+    # ================================
+    VERSION="1.1.11"
+    URL=http://www.cbcb.umd.edu/software/jellyfish/jellyfish-"$VERSION".tar.gz
+    wget -O - "$URL" | tar xzf -
+    cd jellyfish*
+    ./configure --prefix=/usr/local/
+    make
+    make install
+
+    # ================================
     # INSTALL krakenuniq
     # ================================
     VERSION="0.5.3"
