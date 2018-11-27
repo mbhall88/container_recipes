@@ -29,6 +29,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     # ================================
     # INSTALL kraken2
     # ================================
+    apt install -y rsync
     VERSION="2.0.7-beta"
     URL=https://github.com/DerrickWood/kraken2/archive/v"$VERSION".tar.gz
     wget -O - "$URL" | tar xzf -
