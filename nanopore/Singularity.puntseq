@@ -93,7 +93,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     bash install_bracken.sh
     cp bracken /usr/local/bin
     cp bracken-build /usr/local/bin
-    echo "export PATH=$(pwd)/src:$PATH" >> $SINGULARITY_ENVIRONMENT
+    cp -r src /usr/local/bin/
     cd ~
 
     # ================================
@@ -106,4 +106,3 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     ./configure --prefix=/usr/local/
     make
     make install
-
