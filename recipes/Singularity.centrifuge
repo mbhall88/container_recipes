@@ -19,9 +19,15 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     # ================================
     # INSTALL centrifuge
     # ================================
-    VERSION="1.0.4-beta"
-    URL=https://github.com/infphilo/centrifuge/archive/v"$VERSION".tar.gz
-    wget -O - "$URL" | tar xzf -
+    VERSION="88ecab483e32f1d1b54b2e155ddb34ea5806e511"
+    git clone https://github.com/infphilo/centrifuge.git
     cd centrifuge*
+    git checkout "$VERSION"
     make
     make install prefix=/usr/local
+    cd ~
+    # need python2 for kreport
+    add-apt-repository ppa:deadsnakes/ppa
+    apt update
+    apt install -y python2.7
+    ln -s /usr/bin/python2.7 /usr/bin/python
