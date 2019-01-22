@@ -39,6 +39,7 @@ which can be used for building up your own recipes.
 * [canu](https://github.com/marbl/canu)
 * [centrifuge](https://github.com/infphilo/centrifuge)
 * [clustal omega](http://www.clustal.org/omega/)
+* [deepbinner (GPU version)](https://github.com/rrwick/Deepbinner)
 * [f5pack](https://github.com/mateidavid/fast5)
 * [filtlong](https://github.com/rrwick/Filtlong)
 * [kraken2](https://www.ccb.jhu.edu/software/kraken2/index.shtml)

@@ -1,0 +1,12 @@
+Bootstrap: docker
+From: tensorflow/tensorflow:latest-gpu-py3
+
+%post
+    echo 'export LC_ALL=C.UTF-8' >> /environment
+    echo 'export LANG=C.UTF-8' >> /environment
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+    apt update
+    apt install -y git wget
+
+    pip3 install git+https://github.com/mbhall88/Deepbinner.git
