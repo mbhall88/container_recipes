@@ -9,4 +9,4 @@ From: tensorflow/tensorflow:latest-gpu-py3
     apt update
     apt install -y git wget
 
-    pip3 install git+https://github.com/mbhall88/Deepbinner.git
+    pip3 install git+https://github.com/rrwick/Deepbinner.git
