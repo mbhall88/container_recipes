@@ -18,12 +18,17 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     # ========================
     # INSTALL Mykrobe
     # ========================
-    COMMIT=8f7fd05b9b94fa3cc40df2845187fa35393b9c2a
+    # version 0.6
+    COMMIT=50d710925f23a259097f44387704687273eaa982
     apt-get install -y python3-pip
     git clone https://github.com/Mykrobe-tools/mykrobe-atlas-cli.git mykrobe
     cd mykrobe
     git checkout "$COMMIT"
-    wget https://goo.gl/DXb9hN -O - | tar -vxzf  -
+    wget https://bit.ly/2H9HKTU -O - | tar -vxzf  -
     rm -fr src/mykrobe/data
     mv mykrobe-data src/mykrobe/data
     pip3 install .
+
+    # run tests
+    pip3 install tox
+    tox
