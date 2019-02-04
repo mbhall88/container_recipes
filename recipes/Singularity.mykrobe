@@ -1,9 +1,11 @@
 Bootstrap: debootstrap
-OSVersion: xenial
+OSVersion: bionic
 MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
 
 %environment
-  PATH=/usr/local/bin:$PATH
+    export PATH=/usr/local/bin:$PATH
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
 
 %post
     apt-get update
@@ -12,8 +14,6 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     apt-get update
     export LC_ALL=C.UTF-8
     export LANG=C.UTF-8
-    echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
-    echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
 
     # ========================
     # INSTALL Mykrobe
@@ -28,7 +28,3 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     rm -fr src/mykrobe/data
     mv mykrobe-data src/mykrobe/data
     pip3 install .
-
-    # run tests
-    pip3 install tox
-    tox
