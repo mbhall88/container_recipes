@@ -9,6 +9,12 @@ From: tensorflow/tensorflow:latest-py3
     apt update
     apt install -y git wget
 
+    # pip3 seems to be broken in this container - fix
+    python3 -m pip uninstall -y pip && apt install -y python3-pip --reinstall
+
+    # ========================
+    # INSTALL Deepbinner
+    # ========================
     pip3 install git+https://github.com/rrwick/Deepbinner.git
 
 %test
