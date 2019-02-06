@@ -18,8 +18,8 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     # ========================
     # INSTALL Mykrobe
     # ========================
-    # version 0.6
-    COMMIT=fe82b366136543538aab1903e8244618904a88e7
+    # version 0.6.1
+    COMMIT=ff2caf95691b8c3ca66fbad17c90bf03edee4e25
     apt-get install -y python3-pip
     git clone https://github.com/Mykrobe-tools/mykrobe-atlas-cli.git mykrobe
     cd mykrobe
@@ -28,3 +28,7 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     rm -fr src/mykrobe/data
     mv mykrobe-data src/mykrobe/data
     pip3 install .
+
+%test
+    mykrobe --help
+    mykrobe predict --help
