@@ -32,6 +32,8 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
 %test
     mykrobe --help
     mykrobe predict --help
+    mykrobe variants --help
+    mykrobe genotype --help
     pip3 install tox
     mkdir -p /data/db
     cd /mykrobe*
