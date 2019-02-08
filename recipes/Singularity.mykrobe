@@ -37,7 +37,7 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     mykrobe genotype --help
 
     cd /mykrobe*
-    # only run quick tests that dont require mongodb
+    # only run tests that dont require mongodb
     pytest tests/metagenomics_tests \
         tests/predict_tests \
         tests/stats_tests \
