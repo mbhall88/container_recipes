@@ -29,13 +29,16 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     mv mykrobe-data src/mykrobe/data
     pip3 install .
 
-    pip3 install tox
-    mkdir -p /data/db
-    cd /mykrobe*
-    tox -s
-
 %test
+    pip3 install pytest
     mykrobe --help
     mykrobe predict --help
     mykrobe variants --help
     mykrobe genotype --help
+
+    cd /mykrobe*
+    # only run quick tests that dont require mongodb
+    pytest tests/metagenomics_tests \
+    tests/predict_tests \
+    tests/stats_tests \
+    tests/typer_tests
