@@ -39,6 +39,6 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     cd /mykrobe*
     # only run quick tests that dont require mongodb
     pytest tests/metagenomics_tests \
-    tests/predict_tests \
-    tests/stats_tests \
-    tests/typer_tests
+        tests/predict_tests \
+        tests/stats_tests \
+        tests/typer_tests
