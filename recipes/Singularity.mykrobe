@@ -29,12 +29,13 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     mv mykrobe-data src/mykrobe/data
     pip3 install .
 
+    pip3 install tox
+    mkdir -p /data/db
+    cd /mykrobe*
+    tox -s
+
 %test
     mykrobe --help
     mykrobe predict --help
     mykrobe variants --help
     mykrobe genotype --help
-    pip3 install tox
-    mkdir -p /data/db
-    cd /mykrobe*
-    tox -s
