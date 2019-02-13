@@ -17,8 +17,5 @@ From: tensorflow/tensorflow:latest-py3
     # ========================
     pip3 install git+https://github.com/rrwick/Deepbinner.git
 
-    # install pandas for use in snakemake pipeline
-    pip3 install pandas
-
 %test
     deepbinner --help
