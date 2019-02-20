@@ -10,9 +10,9 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt install -y git wget build-essential
     export LC_ALL=C.UTF-8
     export LANG=C.UTF-8
-    echo 'export LC_ALL=C.UTF-8' >> /environment
-    echo 'export LANG=C.UTF-8' >> /environment
-    echo "export PATH=/usr/local:/usr/local/bin:$PATH" >> /environment
+    echo 'export LC_ALL=C.UTF-8' >> "$SINGULARITY_ENVIRONMENT"
+    echo 'export LANG=C.UTF-8' >> "$SINGULARITY_ENVIRONMENT"
+    echo "export PATH=/usr/local:/usr/local/bin:$PATH" >> "$SINGULARITY_ENVIRONMENT"
 
     # ================================
     # INSTALL <program>
