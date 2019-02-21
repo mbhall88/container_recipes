@@ -1,0 +1,14 @@
+Bootstrap: shub
+From: mbhall88/Singularity_recipes:template
+
+%post
+    apt update
+    apt install -y python3-pip
+    # ================================
+    # INSTALL pistis
+    # ================================
+    VERSION="0.3.3"
+    pip3 install pistis=="$VERSION"
+
+%test
+    command -v pistis || exit 1
