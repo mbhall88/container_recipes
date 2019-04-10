@@ -18,9 +18,8 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     # ========================
     # INSTALL Mykrobe
     # ========================
-    # version 0.6.1
-    VERSION=0.6.1
-    URL=https://github.com/Mykrobe-tools/mykrobe/archive/"$VERSION".tar.gz
+    VERSION=0.7.0
+    URL=https://github.com/Mykrobe-tools/mykrobe/archive/v"$VERSION".tar.gz
     apt-get install -y python3-pip mongodb
     wget "$URL" -O - | tar -xzf -
     cd mykrobe*
@@ -29,7 +28,7 @@ MirrorURL:  http://us.archive.ubuntu.com/ubuntu/
     mv mykrobe-data src/mykrobe/data
     pip3 install .
 
-%test
+# %test
     pip3 install pytest
     mykrobe --help
     mykrobe predict --help
