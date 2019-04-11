@@ -23,7 +23,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     wget -O - "$URL" | tar xzf -
     cp ncbi*/bin/dustmasker /usr/local/bin/
     rm -rf ncbi-blast*
-    cd ~
+    cd "$HOME" || exit 1
 
     # ================================
     # INSTALL kraken2
