@@ -6,6 +6,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     export LC_ALL=C.UTF-8
     export LANG=C.UTF-8
     export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+    PATH=/usr/local/bin:$PATH
 
 %post
     apt update
@@ -125,3 +126,12 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     # ================================
     VERSION=0.3.3
     pip3 install pistis=="$VERSION"
+
+    # ================================
+    # INSTALL minimap2
+    # ================================
+    VERSION="2.13"
+    URL=https://github.com/lh3/minimap2/releases/download/v${VERSION}/minimap2-${VERSION}_x64-linux.tar.bz2
+    wget "$URL" -O - | tar -jxf -
+    cd minimap2-${VERSION}_x64-linux/ || exit 1
+    echo "export PATH=$(pwd):$PATH" >> $SINGULARITY_ENVIRONMENT
