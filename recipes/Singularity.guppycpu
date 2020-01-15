@@ -17,7 +17,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     # ================================
     # INSTALL guppy
     # ================================
-    VERSION="3.2.1"
+    VERSION="3.4.4"
     URL="https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy-cpu_${VERSION}_linux64.tar.gz"
     wget -O - "$URL" | tar xzf -
     cd ont-guppy*
