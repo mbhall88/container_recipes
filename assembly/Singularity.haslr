@@ -1,0 +1,52 @@
+Bootstrap: library
+From: ubuntu:18.04
+
+%post
+    apt update
+    apt install -y software-properties-common
+    apt-add-repository universe
+    apt update
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+    echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+    echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+    echo "export PATH=/usr/local:/usr/local/bin:$PATH" >> $SINGULARITY_ENVIRONMENT
+
+    ################################################################################
+    # INSTALL HASLR
+    # https://github.com/vpc-ccg/haslr#installation
+    ################################################################################
+    VERSION="e67b1eb"
+    URL="https://github.com/vpc-ccg/haslr.git"
+    DIR="haslr"
+
+    apt install -y zlib1g-dev wget build-essential git
+
+    git clone "$URL" "$DIR"
+    cd "$DIR" || exit 1
+    make
+    install --target-directory=/usr/bin bin/*
+
+
+%test
+    command -v fastutils >/dev/null 2>&1 || { echo >&2 "I require fastutils but it's not installed.  Aborting."; exit 1; }
+    command -v haslr_assemble >/dev/null 2>&1 || { echo >&2 "I require haslr_assemble but it's not installed.  Aborting."; exit 1; }
+    command -v haslr.py >/dev/null 2>&1 || { echo >&2 "I require haslr.py but it's not installed.  Aborting."; exit 1; }
+    command -v minia >/dev/null 2>&1 || { echo >&2 "I require minia but it's not installed.  Aborting."; exit 1; }
+    command -v minimap2 >/dev/null 2>&1 || { echo >&2 "I require minimap2 but it's not installed.  Aborting."; exit 1; }
+    command -v minia_nooverlap >/dev/null 2>&1 || { echo >&2 "I require minia_nooverlap but it's not installed.  Aborting."; exit 1; }
+
+
+%labels
+    Author Michael Hall
+    Version e67b1eb
+    Website https://github.com/vpc-ccg/haslr
+
+
+%help
+    This is an unofficial container for the hybrid assembly tool HASLR.
+    The website for HASLR can be found at https://github.com/vpc-ccg/haslr
+    You can invoke HASLR with this container using the executable `haslr.py`
+
+    # Example
+    singularity exec <container> haslr.py --help
