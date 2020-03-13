@@ -1,0 +1,58 @@
+Bootstrap: library
+from: ubuntu:18.04
+
+%post
+    apt update
+    apt install -y software-properties-common
+    apt-add-repository universe
+    apt update
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+    echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+    echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
+    echo "export PATH=/usr/local:/usr/local/bin:$PATH" >> $SINGULARITY_ENVIRONMENT
+
+    ################################################################################
+    # INSTALL TAIYAKI
+    ################################################################################
+    apt update
+    apt install -y libblas3 libblas-dev lsb-release libhdf5-serial-dev python3-dev \
+        python3-setuptools python3-pip python3-virtualenv git build-essential
+
+    PY="python3"
+    export VERSION="ce0cfbf"
+    export DIR="taiyaki"
+    export TORCH_URL="http://download.pytorch.org/whl/cu92/torch-1.2.0%2Bcu92-cp36-cp36m-manylinux1_x86_64.whl"
+
+    git clone https://github.com/nanoporetech/taiyaki.git "$DIR"
+    cd "$DIR" || exit 1
+    git checkout "$VERSION"
+
+    "$PY" -m pip install --upgrade pip setuptools
+    "$PY" -m pip install "$TORCH_URL"
+    "$PY" -m pip install -r requirements.txt cupy-cuda92
+    "$PY" -m pip install -r develop_requirements.txt
+    "$PY" -m pip install -e .
+    echo "export PATH=$(realpath bin/):${PATH}" >> $SINGULARITY_ENVIRONMENT
+
+%test
+    python3 -c "import taiyaki"
+
+%labels
+    Author Michael Hall
+    Version ce0cfbf
+    Website https://github.com/nanoporetech/taiyaki
+
+
+%help
+    This is an unofficial container for the nanopore basecalling model trainer, taiyaki.
+    The website for taiyaki can be found at https://github.com/nanoporetech/taiyaki
+    You can invoke taikayki scripts with this container, or spawn a shell and use it
+    as a python library
+
+    # Example script
+    singularity exec <container> get_refs_from_sam.py --help
+    # Example library
+    singularity shell <container>
+    python3
+    >>> import taiyaki
