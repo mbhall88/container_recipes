@@ -11,6 +11,8 @@ from: ubuntu:18.04
     echo 'export LC_ALL=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
     echo 'export LANG=C.UTF-8' >> $SINGULARITY_ENVIRONMENT
     echo "export PATH=/usr/local:/usr/local/bin:$PATH" >> $SINGULARITY_ENVIRONMENT
+    # symlink python to python3
+    ln -s $(which python3) /usr/local/bin/python
 
     ################################################################################
     # INSTALL TAIYAKI
