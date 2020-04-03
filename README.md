@@ -1,5 +1,16 @@
 # Singularity Recipes
 
+---
+
+**NOTE**: I am in the process of porting these recipes and images to
+singularity version 3 and [Singularity Library][library]. Any recipes that
+have been ported will have their images now hosted [here][my-lib].
+
+[library]: https://cloud.sylabs.io/library
+[my-lib]: https://cloud.sylabs.io/library/mbhall88/default
+
+---
+
 [![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/685)  
 This repository is for all of my [Singularity](https://www.sylabs.io/singularity/) recipes and is linked to Singularity
 Hub where they are built and available.
@@ -32,25 +43,3 @@ For a full list of usage examples, check out the [Singularity Hub usage docs](ht
 ## Template
 I have also included a template [`Singularity.template`](https://github.com/mbhall88/Singularity_recipes/blob/master/Singularity.template)
 which can be used for building up your own recipes.
-
-## Available recipes
-* [bcftools](http://www.htslib.org/doc/bcftools.html)
-* [bracken](https://ccb.jhu.edu/software/bracken/index.shtml)
-* [canu](https://github.com/marbl/canu)
-* [centrifuge](https://github.com/infphilo/centrifuge)
-* [clustal omega](http://www.clustal.org/omega/)
-* [deepbinner (GPU version)](https://github.com/rrwick/Deepbinner)
-* [f5pack](https://github.com/mateidavid/fast5)
-* [filtlong](https://github.com/rrwick/Filtlong)
-* [kraken2](https://www.ccb.jhu.edu/software/kraken2/index.shtml)
-* [krakenuniq](https://github.com/fbreitwieser/krakenuniq)
-* [mccortex](https://github.com/mcveanlab/mccortex)
-* [minimap2](https://lh3.github.io/minimap2/)
-* [MUMmer](http://mummer.sourceforge.net/manual/)
-* [mykrobe](https://github.com/Mykrobe-tools/mykrobe-atlas-cli)
-* [nanopolish](https://github.com/jts/nanopolish)
-* [ngm](https://github.com/Cibiv/NextGenMap/wiki)
-* [pilon](https://github.com/broadinstitute/pilon/wiki)
-* [porechop](https://github.com/rrwick/Porechop)
-* [samtools](http://samtools.sourceforge.net/)
-* [vcftools](https://vcftools.github.io/)
