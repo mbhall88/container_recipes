@@ -3,7 +3,15 @@
 The recipes in this directory revolve around tools for analysing nanopore
 data.
 
----
+[TOC]:#
+
+# Table of Contents
+- [nanoporeqc](#nanoporeqc)
+- [fast5](#fast5)
+- [nanopolish](#nanopolish)
+- [deepbinner](#deepbinner)
+- [taiyaki](#taiyaki)
+
 
 ## nanoporeqc
 This container holds a set of tools that I use for quality control of nanopore
@@ -44,23 +52,6 @@ singularity exec fast5.simg f5pack --help
 
 ---
 
-## canu
-[Canu](https://github.com/marbl/canu) is a fork of the Celera Assembler, designed for high-noise single-molecule sequencing (such as the PacBio RS II/Sequel or Oxford Nanopore MinION).
-
-Canu is a hierarchical assembly pipeline which runs in four steps:
-
-* Detect overlaps in high-noise sequences using MHAP
-* Generate corrected sequence consensus
-* Trim corrected sequences
-* Assemble trimmed corrected sequences
-
-```sh
-singularity pull --force --name canu.simg shub://mbhall88/Singularity_recipes:canu
-singularity exec canu.simg canu --help
-```
-
----
-
 ## nanopolish
 Software package for signal-level analysis of Oxford Nanopore sequencing data. [Nanopolish](https://github.com/jts/nanopolish) can calculate an improved consensus sequence for a draft genome assembly, detect base modifications, call SNPs and indels with respect to a reference genome and more (see Nanopolish modules, below).
 
@@ -77,4 +68,13 @@ singularity exec nanopolish.simg nanopolish --help
 ```sh
 singularity pull --force --name deepbinner.simg shub://mbhall88/Singularity_recipes:deepbinner
 singularity exec deepbinner.simg deepbinner --help
+```
+
+## taiyaki
+
+<https://github.com/nanoporetech/taiyaki>
+
+```shell
+uri="library://mbhall88/default/taiyaki"
+singularity exec "$uri" prepare_mapped_reads.py --help
 ```
