@@ -5,20 +5,26 @@ The recipes in this directory revolve around tools for genome assembly.
 
 [TOC]: #
 
+# Table of Contents
+- [[canu][canu]](#canu)
+- [[haslr][haslr]](#haslr)
+- [polish](#polish)
+- [[racon][racon]](#racon)
 
 
-## [canu][canu]
 
-[canu]: https://github.com/marbl/canu
+## canu
+
+<https://github.com/marbl/canu>
 
 ```sh
 uri="library://mbhall88/default/canu"
 singularity exec "$uri" canu --help
 ```
 
-## [haslr][haslr]
+## haslr
 
-[haslr]: https://github.com/vpc-ccg/haslr
+<https://github.com/vpc-ccg/haslr>
 
 ```shell
 uri="library://mbhall88/default/haslr"
@@ -52,9 +58,9 @@ To run any of these programs you need to first pull the container and then execu
 container with the name of any of the tools, following by their normal CLI
 parameters/options/arguments.
 
-## [racon][racon]
+## racon
 
-[racon]: https://github.com/lbcb-sci/racon
+<https://github.com/lbcb-sci/racon>
 
 ```shell
 uri="library://mbhall88/default/racon"
