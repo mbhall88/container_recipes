@@ -18,7 +18,7 @@ From: ubuntu:16.04
     # INSTALL guppy-gpu
     # ================================
     apt install -y wget build-essential
-    VERSION="3.5.1"
+    VERSION="3.6.0"
     URL="https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy_${VERSION}_linux64.tar.gz"
     wget "$URL" -O - | tar xzf -
     cd ont-guppy || exit 1
@@ -37,7 +37,7 @@ From: ubuntu:16.04
 
 %labels
     Author Michael Hall
-    Version v3.5.1
+    Version v3.6.0
 
 
 %help
