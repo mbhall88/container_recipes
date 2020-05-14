@@ -16,7 +16,7 @@ From: ubuntu:18.04
     # INSTALL RACON
     # https://github.com/lbcb-sci/racon#installation
     ################################################################################
-    VERSION="bfe29e5"
+    VERSION="1.4.13"
     URL="https://github.com/lbcb-sci/racon.git"
     GIT_PARAMS="--recursive"
     DIR="racon"
@@ -25,6 +25,7 @@ From: ubuntu:18.04
 
     git clone "$GIT_PARAMS" "$URL" "$DIR"
     cd "$DIR" || exit 1
+    git checkout "$VERSION"
     mkdir build
     cd build || exit 1
     cmake -DCMAKE_BUILD_TYPE=Release \
@@ -33,6 +34,7 @@ From: ubuntu:18.04
         ..
     make
     install --target-directory=/usr/bin bin/*
+    cd
 
 
 %test
@@ -44,7 +46,7 @@ From: ubuntu:18.04
 
 %labels
     Author Michael Hall
-    Version bfe29e5
+    Version 1.4.13
     Website https://github.com/lbcb-sci/racon
 
 
