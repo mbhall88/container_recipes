@@ -22,7 +22,7 @@ from: ubuntu:18.04
         python3-setuptools python3-pip python3-virtualenv git build-essential
 
     PY="python3"
-    export VERSION="ce0cfbf"
+    export VERSION="v5.3.0"
     export DIR="taiyaki"
     export TORCH_URL="http://download.pytorch.org/whl/cu92/torch-1.2.0%2Bcu92-cp36-cp36m-manylinux1_x86_64.whl"
 
@@ -42,7 +42,7 @@ from: ubuntu:18.04
 
 %labels
     Author Michael Hall
-    Version ce0cfbf
+    Version 5.3.0
     Website https://github.com/nanoporetech/taiyaki
 
 
