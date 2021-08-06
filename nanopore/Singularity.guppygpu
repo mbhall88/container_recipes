@@ -18,7 +18,7 @@ From: ubuntu:16.04
     # INSTALL guppy-gpu
     # ================================
     apt install -y wget build-essential
-    VERSION="3.6.0"
+    VERSION="4.4.0"
     URL="https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy_${VERSION}_linux64.tar.gz"
     wget "$URL" -O - | tar xzf -
     cd ont-guppy || exit 1
@@ -32,12 +32,11 @@ From: ubuntu:16.04
     command -v guppy_barcoder >/dev/null 2>&1 || { echo >&2 "I require guppy_barcoder but it's not installed.  Aborting."; exit 1; }
     command -v guppy_basecall_server >/dev/null 2>&1 || { echo >&2 "I require guppy_basecall_server but it's not installed.  Aborting."; exit 1; }
     command -v guppy_basecaller >/dev/null 2>&1 || { echo >&2 "I require guppy_basecaller but it's not installed.  Aborting."; exit 1; }
-    command -v guppy_basecaller_1d2 >/dev/null 2>&1 || { echo >&2 "I require guppy_basecaller_1d2 but it's not installed.  Aborting."; exit 1; }
     command -v guppy_basecaller_supervisor >/dev/null 2>&1 || { echo >&2 "I require guppy_basecaller_supervisor but it's not installed.  Aborting."; exit 1; }
 
 %labels
     Author Michael Hall
-    Version v3.6.0
+    Version v4.4.0
 
 
 %help
