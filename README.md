@@ -10,5 +10,6 @@ Directories group recipes for a certain theme. Each program has it's own dedicat
 directory within each theme. Subsequently, each version of a program also has it's own
 subdirectory with a Dockerfile.
 
+*For previous Singularity recipes, check the repository commit history.*
 
 [quay]: https://quay.io/user/mbhall88
