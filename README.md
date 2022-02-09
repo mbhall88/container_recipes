@@ -1,10 +1,14 @@
 # Container Recipes
 
 
-⚠️ This repository is in a transition phase. I am slowly moving all recipes to Docker. ⚠️
+⚠️ This repository has undergone a dramatic change. Only Docker recipes are stored here
+now due to their flexibility of container runtimes ⚠️
 
 All new recipes will be hosted on my [quay.io repository](quay).
-[my-lib]: https://cloud.sylabs.io/library/mbhall88/default
+
+Directories group recipes for a certain theme. Each program has it's own dedicated
+directory within each theme. Subsequently, each version of a program also has it's own
+subdirectory with a Dockerfile.
 
 
 [quay]: https://quay.io/user/mbhall88
